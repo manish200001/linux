@@ -81,6 +81,24 @@ ls a*.txt
 ```
 ![](https://lh7-us.googleusercontent.com/li_J-U4AvplPL7E9RFXOYBDZbWkkAzdqBtxdWC93nNTd5fbJTzMafQzlh9qGUG1DSMmrgu78J0ATbo2hwtvRjwJhlRjnpDldl1UXBfW3RquTFXgWQxJeRGLFNGz3PeaxaoE_r54S7B10IPHUhUd3ERM)
 
+**Q6. Rename all files in the "Documents" subdirectory of "MyFiles" with a ".bak" extension. Ensure the original file names are preserved.**
+
+
+```
+ls
+```
+```
+vim a.sh
+```
+```
+cat a.sh
+```
+```
+bash a.sh
+```
+****![](https://lh7-us.googleusercontent.com/tOcmyHcCjrGkPaJYKTVx9Rm9D8zV69y9mu2YjlTFrZYVchat7KbedotfZxRf9DC4sCcRiMJDoZqrwt5Ih2xXe-Ex5FS4naH2nF4lo_X-1_XHbw9QVFTy-K8Uu9gg_-I1EqpRRUPr-fdPlxPb7Sp6kk8)****
+
+****![](https://lh7-us.googleusercontent.com/mSepSj7Ih5XtVw8bubTsu61AmrEQsKrFz2jPKblAcWaeL_hPFFKMmy6AW7tnWqpFG_e67x1NxG-AglHX5RiS0LZmgxs0r2H9PA2Prj_HciXkhs2nJmi17al9YjQ2axcNmfujWYTJO590eQgyoUhDjhs)****
 
 
 
@@ -264,6 +282,20 @@ sudo su
 ****![](https://lh7-us.googleusercontent.com/-YRZXZVpojUFAvaTHdQvVbbfe1nzTk5JtJgSRTR4EvH_PyVXrGrv3oHqlDWcVkTQTI8KFEdZU__mEHiyCpVo6p5oEAptkFTe_fJVJCpTdunVT6Z1_AulEUhv8bjA2hUMxqNJCM_ErYnAdsEdNILcXD0)****
 
 **Q17. Modify the user account "john\_doe" to change the default shell to "/bin/bash" and set the account's expiration date to one month from today.**
+```
+sudo chsh -s /bin/bash john_doe
+```
+```
+sudo chage -E $(date -d "+1 month" +"%Y-%m-%d") john_doe
+```
+```
+sudo chage -l john_doe
+```
+```
+grep john_doe /etc/passwd
+```
+
+****![](https://lh7-us.googleusercontent.com/hOY_oeXSR8hxEI2q-E0gNfJE9utdjG1LWmNO6K6SQ8DmVpO_s5imeFE534A9HojwK893GnsjsIxHVrgScqufmRJA64wUzh7Gn_y-jxWJzczVf1f3heRP8g3lOIMrzsPgYilBvAVIY1UgZwRcdEgLj9M)****
 
 
 **Q18. Create a new group named "development\_team." Add "john\_doe" to this group and verify the group's existence.**
@@ -332,6 +364,9 @@ sudo delgroup development_team
 grep development_team /etc/group
 ```
 ****![](https://lh7-us.googleusercontent.com/-_wTOoaONy2ymlrkQcejEZb2ZCpHxA7gAg0Pp6AySXTLJtJf2noHmcnqR4-UOWOC1NiEPyl8kUBJRwYKHw2Bwa-yICNkPVm3QCJxx-khv8CBqQY7Dk18u_LIASJLCyDguEKYuTmZoWVUXUhsGCC2jNM)****
+
+**Q22. Implement a password policy that requires users to change their passwords every 90 days. Apply this policy to all existing and new user accounts.**
+
 
 **Q23. Manually lock the user account "john\_doe." Attempt to log in as "john\_doe" to confirm that the account is locked. Then, unlock the account.**
 ```
