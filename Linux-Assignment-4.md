@@ -367,8 +367,24 @@ grep development_team /etc/group
 
 **Q22. Implement a password policy that requires users to change their passwords every 90 days. Apply this policy to all existing and new user accounts.**
 
+```
+sudo chage -M 90 -m 0 -W 7 -I 30 -E -1 $(cut -d: -f1 /etc/passwd)
+```
+```
+sudo sed -i '/^PASS_MAX_DAYS/c\PASS_MAX_DAYS   90' /etc/login.defs
+```
+```
+sudo chage -l john_doe
+```
+```
+grep PASS_MAX_DAYS /etc/login.defs
+```
+
+
+****![](https://lh7-us.googleusercontent.com/85tnaSRABWL5nE3jFKvgr4lgPoB9uznA2PhjNvjl3fvytgSFUQ91n-BFLkaQmGFy6hJBNIkvwipHQPdfe0RxrI5H6KnaVovKSQOwivDGuWignti9ju0yPwnSVJxiOdh2joB_wspAQoe_FNleLzmnt7U)****
 
 **Q23. Manually lock the user account "john\_doe." Attempt to log in as "john\_doe" to confirm that the account is locked. Then, unlock the account.**
+
 ```
 sudo passwd -l john_doe
 ```
