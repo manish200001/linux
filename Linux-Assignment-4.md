@@ -341,7 +341,7 @@ id john_doe
 
 **Q20. Delete the user account "john\_doe" and ensure that their home directory is also removed.**
 ```
-sudo deluser --remvoe-home john_doe
+sudo deluser --remove-home john_doe
 ```
 ```
 id john_doe
